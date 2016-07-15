@@ -22,7 +22,6 @@
 ;;; (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 ;;; USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 ;;; DAMAGE.
-#+CMU (ext:file-comment "$Header: /home/paul/public_html/RCS/terminfo.lisp,v 1.10 2009/07/29 07:05:32 paul Exp paul $")
 
 (in-package "TERMINFO")
 
@@ -53,9 +52,6 @@ is set any time set-terminal is called.")
     (numbers (required-argument) :type (simple-array (signed-byte 16) (*)))
     (strings (required-argument) :type (simple-array t (*)))))
 
-#+CMU
-(declaim (ext:start-block capability %capability))
-
 (defun %capability (name terminfo)
   (let ((whatsit (gethash name *capabilities*)))
     (when (null whatsit)
@@ -73,9 +69,6 @@ is set any time set-terminal is called.")
   "Return the contents of the terminfo database for the given parameter.
 Returns nil for undefined capabilities."
   (%capability name terminfo))
-
-#+CMU
-(declaim (ext:end-block))
 
 (define-compiler-macro capability (&whole form
 				   name &optional (terminfo '*terminfo*))
