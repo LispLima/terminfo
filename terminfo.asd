@@ -29,4 +29,5 @@
               "Nikodemus Siivola <nikodemus@random-state.net>"
               "Nick Patrick <npatrick04@gmail.com")
     :description "Terminfo database front-end."
-    :components ((:file "terminfo")))
+    :components ((:file "packages")
+                 (:file "terminfo")))

@@ -24,18 +24,7 @@
 ;;; DAMAGE.
 #+CMU (ext:file-comment "$Header: /home/paul/public_html/RCS/terminfo.lisp,v 1.10 2009/07/29 07:05:32 paul Exp paul $")
 
-(in-package "COMMON-LISP-USER")
-
-;; DEFPACKAGE would warn here, since we export things outside the definition
-(eval-when (:compile-toplevel :load-toplevel)
-  (unless (find-package "TERMINFO")
-    (make-package "TERMINFO" :nicknames '("TI") :use '("CL"))))
-
 (in-package "TERMINFO")
-
-(export '(*terminfo-directories* *terminfo*
-          capability tparm tputs decode-padding
-          set-terminal capabilities))
 
 (defvar *terminfo-directories* '("/etc/terminfo/"
 				 "/lib/terminfo/"
