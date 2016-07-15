@@ -30,4 +30,6 @@
               "Nick Patrick <npatrick04@gmail.com")
     :description "Terminfo database front-end."
     :components ((:file "packages")
+                 (:file "capabilities")
+                 (:file "capability-definitions")
                  (:file "terminfo")))
